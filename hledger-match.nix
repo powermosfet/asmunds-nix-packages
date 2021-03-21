@@ -1,13 +1,11 @@
+{ pkgs ? import <nixPkgs> { } }:
 let
-  bootstrap = import <nixpkgs> { };
-
-  src = bootstrap.fetchFromGitHub {
+  src = pkgs.fetchFromGitHub {
     owner = "powermosfet";
     repo  = "hledger-match";
-    inherit (nixpkgs) rev sha256;
+    rev = "3909493a7b80788efe5040ce0450abf162154e6c";
+    sha256 = "0r8vnfh7pk2flq1mrkfnc73zjmhx1bx9082gy3zcxxc38r4794xc";
   };
 
-  pkgs = import src { };
-
 in
-  pkgs.haskellPackages.callPackage ./hledger-match.nix { }
+  import src { }
