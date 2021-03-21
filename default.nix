@@ -1,4 +1,4 @@
-{ callPackage }:
+{ pkgs }:
 {
-  hledger-match = callPackage ./hledger-match.nix { };
+  hledger-match = pkgs.haskellPackages.callPackage ./hledger-match.nix { };
 }
