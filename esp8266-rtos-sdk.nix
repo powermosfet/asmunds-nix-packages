@@ -15,13 +15,7 @@ pkgs.stdenv.mkDerivation {
   };
 
   dontConfigure = true;
-  buildPhase = ''
-      export PATH="$PATH:${toolchain}"
-      export IDF_PATH="."
-
-      echo "Building..."
-      # make --makefile=examples/get-started/hello_world/Makefile
-  '';
+  dontBuild = true;
   installPhase = ''
       mkdir $out
       cp -R * $out
