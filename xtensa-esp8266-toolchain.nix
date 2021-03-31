@@ -1,11 +1,18 @@
-{ pkgs ? import <nixPkgs> { } }:
-let
-  src = pkgs.fetchFromGitHub {
-    owner = "powermosfet";
-    repo  = "nix-xtensa-esp8266-toolchain";
-    rev = "2351eb8652a35fed6d53adb48ff5705c81b95264";
-    sha256 = "157mp59964q190s5mfw26lkhppjbk982qcq720mbln1b2dc5lsw4";
+{ pkgs ? import <nixpkgs> { } }:
+
+pkgs.stdenv.mkDerivation {
+  version = "v8.4.0";
+  name = "xtensa-esp8266-toolchain";
+  src = builtins.fetchTarball {
+    url = "https://dl.espressif.com/dl/xtensa-lx106-elf-gcc8_4_0-esp-2020r3-linux-amd64.tar.gz";
+    sha256 = "1w11nl02hp2sg0pmykq67c4s9nlbbkikf6x2zs1lvp5i2jk3knpa";
   };
 
-in
-  import src { }
+  dontConfigure = true;
+  dontBuild = true;
+  installPhase = ''
+      mkdir $out
+      cp -R * $out
+  '';
+  dontStrip = true;
+}
