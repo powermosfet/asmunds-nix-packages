@@ -3,8 +3,8 @@ let
   src = pkgs.fetchFromGitHub {
     owner = "powermosfet";
     repo  = "hledger-depreciate";
-    rev = "de10d9604dc49281e62bad2ad3aad3f5c940841c";
-    sha256 = "18kgnhwh0dvaxs7zqgwv3k9ryl2vp21y882qjmzr5kfn2vsmdgj9";
+    rev = "17d60b14bffc1975c3ddc5a85ab84dfda26cc5df";
+    sha256 = "1pjackrr5qhakff9g7rxj807533pv22rrs0slda6drmw4jv031pm";
   };
 
 in
