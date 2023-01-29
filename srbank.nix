@@ -8,4 +8,4 @@ let
   };
 
 in
-  import src { }
+  import src { pkgs = pkgs; }
