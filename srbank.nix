@@ -3,8 +3,8 @@ let
   src = pkgs.fetchFromGitLab {
     owner = "asmundberge";
     repo  = "sr-bank-repl";
-    rev = "4ad9dfb1f439e3cf9a03bf82ec3f20c5939aa281";
-    sha256 = "08zmwi3qjjy8xkzkbckb792by7049ci18g9kpkr476113ypq6yfq";
+    rev = "0e1493c6393271b9c5f32105ad15e84a1204b797";
+    sha256 = "sha256-s4vM1PJ1q72XicqJUatQtUz4HBdkx2LJYc1Vs/mpB5A=";
   };
 
 in
